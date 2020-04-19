@@ -1,0 +1,291 @@
+Proceso vectoresDeNposiciones
+	
+	Definir vectorNombre, vectorPrimerApellido, vectorSegundoApellido, vectorPrimerNom, vectorSegundoNom, opcionMenuPrincipal, nombre, nombre1, nombre2, Desicion, opcion, apellido1, apellido2 como Texto;
+	Definir vectorNumero, vectorEdad, contador, i, num, suma, edad como Numerico;
+	Definir MenuPrincipal, accion como Logico;
+	
+	Dimension vectorNombre[1000000];
+	Dimension vectorPrimerApellido[1000000];
+	Dimension vectorSegundoApellido[1000000];
+	Dimension vectorPrimerNom[1000000];
+	Dimension vectorSegundoNom[1000000];
+	Dimension vectorNumero[1000000];
+	Dimension vectorEdad[1000000];
+	
+	MenuPrincipal = Verdadero;
+	Mientras MenuPrincipal = Verdadero Hacer
+		
+		Limpiar Pantalla;
+		
+		Escribir"MENU PRINCIPAL";
+		Escribir"";
+		Escribir"1.Ingresar nombres";
+		Escribir"2.Sumar contenido de un vector";
+		Escribir"3.Ingresar Nombre, Apellido y edad";
+		Escribir"4.Salir";
+		Leer opcionMenuPrincipal;
+		
+		Segun opcionMenuPrincipal Hacer
+			
+			"1"://	Crear un vector de n posiciones y llenarlos con nombresde personas.
+				accion = Verdadero;
+				Mientras accion = Verdadero Hacer
+					
+					Limpiar Pantalla;
+					contador=0;
+					Desicion = "S";
+					
+					Escribir"INGRESAR NOMBRES";
+					
+					Mientras Desicion = "S" Hacer
+						
+						
+						Escribir"";
+						Escribir"Ingrese el nombre # ",contador + 1;
+						Leer nombre;
+						
+						vectorNombre[contador] = nombre;
+						contador = contador + 1;
+						
+						Escribir"";
+						Escribir"S.Ingresar otro nombre";
+						Escribir"N.Mostar los nombres ingresados";
+						Leer Desicion;
+						
+						Desicion = Mayusculas(Desicion);
+						
+					FinMientras
+					
+					Limpiar Pantalla;
+					
+					Escribir"los nombres ingresados son :";
+					Para i=0 hasta contador-1 Hacer
+						
+						Escribir vectorNombre[i];
+						
+					FinPara
+					
+					Escribir"";
+					Escribir"QUE DESEAS HACER ?";
+					Escribir"";
+					Escribir"1.Repetir proceso";
+					Escribir"2.Ir al menu principal";
+					Escribir"3.Salir";
+					Leer opcion;
+					
+					Segun opcion Hacer
+						
+						"1":
+							accion = Verdadero;
+							
+						"2":
+							accion = Falso;
+							MenuPrincipal = Verdadero;
+							
+						"3":
+							accion = Falso;
+							MenuPrincipal = Falso;
+							Limpiar Pantalla;
+							Escribir"Gracias por utilizar sofward";
+							
+							De otro Modo
+							
+							accion = Falso;
+							MenuPrincipal = Falso;
+							Limpiar Pantalla;
+							Escribir"OPCION NO VALIDA";
+							
+							
+					FinSegun
+				FinMientras
+				
+			"2"://	Sumar todos los elementos de un vector de tamaño n.
+				accion = Verdadero;
+				Mientras accion = Verdadero Hacer
+					
+					Limpiar Pantalla;
+					contador=0;
+					Desicion = "S";
+					
+					Escribir"INGRESAR NUMEROS PARA HACER LA SUMA";
+					
+					Mientras Desicion = "S" Hacer
+						
+						
+						Escribir"";
+						Escribir"Ingrese el numero ",contador + 1;
+						Leer num;
+						
+						vectorNumero[contador] = num;
+						contador = contador + 1;
+						
+						Escribir"";
+						Escribir"S.Ingresar otro numero";
+						Escribir"N.Mostar los numeros ingresados";
+						Leer Desicion;
+						
+						Desicion = Mayusculas(Desicion);
+						
+					FinMientras
+					
+					Limpiar Pantalla;
+					
+					Escribir"los numeros ingresados son :";
+					Para i=0 hasta contador-1 Hacer
+						
+						Escribir vectorNumero[i];
+						
+					FinPara
+					
+					suma = 0;
+					
+					Para i=0 Hasta contador-1 hacer
+						
+						suma = suma + vectorNumero[i];
+						
+					FinPara
+					
+					Escribir"";
+					Escribir"la suma total del vector es de: ",suma;
+					
+					Escribir"";
+					Escribir"QUE DESEAS HACER ?";
+					Escribir"";
+					Escribir"1.Repetir proceso";
+					Escribir"2.Ir al menu principal";
+					Escribir"3.Salir";
+					Leer opcion;
+					
+					Segun opcion Hacer
+						
+						"1":
+							accion = Verdadero;
+							
+						"2":
+							accion = Falso;
+							MenuPrincipal = Verdadero;
+							
+						"3":
+							accion = Falso;
+							MenuPrincipal = Falso;
+							Limpiar Pantalla;
+							Escribir"Gracias por utilizar sofward";
+							
+							De otro Modo
+							
+							accion = Falso;
+							MenuPrincipal = Falso;
+							Limpiar Pantalla;
+							Escribir"OPCION NO VALIDA";
+							
+							
+					FinSegun
+				FinMientras
+				
+			"3"://	Crear un vector que almacene el nombre de una persona, otro vector que almacene el apellido y otro que guarde la edad.
+				//	Luego imprimir los datos de manera concatenada.
+				accion = Verdadero;
+				Mientras accion = Verdadero Hacer
+					Limpiar Pantalla;
+					contador=0;
+					
+					Desicion = "S";
+					Mientras Desicion = "S" Hacer
+						
+						Escribir"Ingresar el primer nombre # ", contador + 1;
+						leer nombre1;
+						vectorPrimerNom[contador] = nombre1;
+						
+						Escribir"";
+						Escribir"Ingresar el segundo nombre # ", contador + 1;
+						leer nombre2;
+						vectorSegundoNom[contador] = nombre2;
+						
+						Escribir"";
+						Escribir"Ingresar el primer apellido # ",contador + 1;
+						Leer apellido1;
+						vectorPrimerApellido[contador] = apellido1;
+						
+						Escribir"";
+						Escribir"Ingresar el segundo apellido # ",contador + 1;
+						Leer apellido2;
+						vectorSegundoApellido[contador] = apellido2;
+						
+						Escribir"";
+						Escribir"Ingresar la edad # ",contador + 1;
+						Leer edad;
+						vectorEdad[contador] = edad;
+						
+						contador = contador + 1;
+						
+						Escribir"";
+						Escribir"S.Ingresar  nuevos datos";
+						Escribir"N.Mostar los datos ingresados";
+						Leer Desicion;
+						
+						Desicion = Mayusculas(Desicion);
+						
+					FinMientras
+					
+					Limpiar Pantalla;
+					
+					Escribir"Los datos ingresados son : ";
+					Escribir"";
+					
+					Para i=0 Hasta contador-1 Hacer
+						
+						Escribir"";
+						Escribir vectorPrimerNom[i]," ",vectorSegundoNom[i]," ",vectorPrimerApellido[i]," ",vectorSegundoApellido[i]," tiene ",vectorEdad[i]," años";
+						
+					FinPara
+					
+					Escribir"";
+					Escribir"QUE DESEAS HACER ?";
+					Escribir"";
+					Escribir"1.Repetir proceso";
+					Escribir"2.Ir al menu principal";
+					Escribir"3.Salir";
+					Leer opcion;
+					
+					Segun opcion Hacer
+						
+						"1":
+							accion = Verdadero;
+							
+						"2":
+							accion = Falso;
+							MenuPrincipal = Verdadero;
+							
+						"3":
+							accion = Falso;
+							MenuPrincipal = Falso;
+							Limpiar Pantalla;
+							Escribir"Gracias por utilizar sofward";
+							
+							De otro Modo
+							
+							accion = Falso;
+							MenuPrincipal = Falso;
+							Limpiar Pantalla;
+							Escribir"OPCION NO VALIDA";
+							
+							
+					FinSegun
+				FinMientras
+				
+				
+			"4":
+				Limpiar Pantalla;
+				MenuPrincipal = Falso;
+				Escribir "GRACIAS POR UTILIZAR ESTE SOFWARD";
+				
+				De otro Modo
+				Limpiar Pantalla;
+				MenuPrincipal = Falso;
+				Escribir "OPCION NO VALIDA";
+				
+		FinSegun
+		
+	FinMientras
+	
+FinProceso
